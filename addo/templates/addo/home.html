@@ -1,0 +1,159 @@
+{% extends 'addo/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+    
+{% block banner_slider %}   
+    <div class="owl-carousel owl-theme">
+            <div class="item"><img src="./static/addo/images/a.jpg" alt="" width="10" height="100 px"></div>
+            <div class="item"><img src="./static/addo/images/f.jpg" alt="" width="500" height="100"></div>
+            <div class="item"><img src="./static/addo/images/e.jpg" alt="" width="500" height="100"></div>
+            <div class="item"><img src="./static/addo/images/3.jpg" alt="" width="500" height="100"></div>
+            <div class="item"><img src="./static/addo/images/e.jpg" alt="" width="500" height="100"></div>
+            <div class="item"><img src="./static/addo/images/f.jpg" alt="" width="500" height="100"></div>
+            <div class="item"><img src="./static/addo/images/g.jpg" alt="" width="500" height="100"></div>        
+    </div>
+{% endblock banner_slider %}
+
+{% block livesale %}
+<div class="container">
+    <div class="row bg-danger text-center text-white border-bottom shadow">
+        <h1>SALE IS LIVE NOW</h1>
+        <span>10% Instant Discount on Navil Bank Credit and Debit Card</span>
+        <small class="fw-lighter">Term and Condition Applied (For details visit Bank's official Website</small>
+    </div>
+</div>
+{% endblock livesale%}
+
+{% block main-content %}
+<div class="m-3">
+    <h2 class="text-center bg-dark text-white">SmartBUY Bottom Wear</h2>
+    <!--slider 1-->
+
+    <div class="owl-carousel owl-theme" id="slider1">
+        {% for b in bottomwears %}
+        <a href="{% url 'product-detail' b.id %}"><div class="item"><img src="{{b.product_image.url}}" alt="" width="10" height="100"><span class="fw-bold">{{b.title}}</span><br><span class="fs-5">Rs. {{b.discount_price}}</span></div></a>
+        {% endfor %}
+    </div>  
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="{% static 'addo/images/q.png' %}" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="{% static 'addo/images/w.png' %}" alt="" class="img-fluid">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card mb-3">
+                    <div class="card-body" >
+                        <img src="{% static 'addo/images/ww.png' %}" alt="" class="img-fluid">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="{% static 'addo/images/qq.png' %}" alt="" class="img-fluid">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+<div class="m-3">
+    <h2 class="text-center bg-success text-white">Mobiles</h2>
+    <!--slider 1-->
+    
+
+    <div class="owl-carousel owl-theme" id="slider1">
+        {% for e in mobiles %}
+        <a href="{% url 'product-detail' e.id %}"><div class="item"><img src="{{e.product_image.url}}" alt="" width="100" height="100"><span class="fw-bold">{{e.title}}</span><br><span class="fs-5">{{e.discount_price}}</span></div></a>
+        {% endfor %}
+    </div>
+    
+</div>
+
+<div class="m-3">
+    <h2 class="text-center bg-secondary text-white"> Top Laptop Deals</h2>
+    <!--slider 1-->
+    
+
+    <div class="owl-carousel owl-theme" id="slider2">
+        {% for l in laptop %}
+        <a href="{% url 'product-detail' l.id %}"><div class="item"><img src="{{l.product_image.url}}" alt="" width="500" height="100"><span class="fw-bold">{{l.title}}</span><br><span class="fs-5">Rs. {{l.discount_price}}</span></div></a>
+        {% endfor %}
+    </div>
+    
+</div>
+
+
+<div class="m-3">
+    <h2 class="text-center bg-secondary text-white"> Invertor For Home </h2>
+    <!--slider 1-->
+    
+
+    <div class="owl-carousel owl-theme" id="slider2">
+        {% for i in invertor %}
+        <a href="{% url 'product-detail' i.id %}"><div class="item"><img src="{{i.product_image.url}}" alt="" width="500" height="100"><span class="fw-bold">{{i.title}}</span><br><span class="fs-5">Rs. {{i.discount_price}}</span></div></a>
+        {% endfor %}
+    </div>
+    
+</div>
+
+<div class="m-3">
+    <h2 class="text-center bg-warning text-white"> Top Wears Collections </h2>
+    <!--slider 1-->
+    
+
+    <div class="owl-carousel owl-theme" id="slider3">
+        {% for t in topwears %}
+        <a href="{% url 'product-detail' t.id %}"><div class="item"><img src="{{t.product_image.url}}" alt="" width="500" height="100"><span class="fw-bold">{{t.title}}</span><br><span class="fs-5">Rs. {{t.discount_price}}</span></div></a>
+        {% endfor %}
+    </div>
+    
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+$('.owl-carousel').owlCarousel({
+loop:true,
+margin:10,
+nav:true,
+dots:true,
+autoplay: false,
+autoplayTimeout: 3000,
+stagePadding: 50,
+responsive:{
+    0:{
+        items:1
+    },
+    600:{
+        items:3
+    },
+    1000:{
+        items:5
+    }
+}
+})
+
+
+
+</script>
+
+
+</div>
+{% endblock main-content %}
